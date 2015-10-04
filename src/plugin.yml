@@ -1,0 +1,246 @@
+name: VertexScala
+version: 2.0
+author: FaucetScala
+main: org.faucetscala.vertex.Vertex
+commands:
+  scala:
+    description: A command that will give you information about PortableScalaRuntime.
+    permission: vertexscala.info.scalaruntime
+    usage: /scala
+  instance:
+    description: A command that will give you information of what BukkitInstance you are.
+    permission: vertexscala.info.instance
+    usage: /instance
+  freeze:
+    description: A command that will freeze the specified player.
+    permission: vertexscala.admin.freeze
+    usage: /freeze <player>
+  unfreeze:
+    description: A command that will unfreeze the specified player.
+    permission: vertexscala.admin.unfreeze
+    usage: /unfreeze <player>
+  broadcast:
+    description: A command that will broadcast a message to all of the server.
+    permission: vertexscala.admin.broadcast
+    usage: /broadcast <message>
+  commandengine:
+    description: A command that will give you information about ScalaCommandEngine.
+    permission: vertexscala.info.commandengine
+    usage: /commandengine
+  seen:
+    description: A command that will give you information about the specified player.
+    permission: vertexscala.info.seen
+    usage: /seen <player>
+  gamemode:
+    description: A command that will change the specified player's gamemode to the specified gamemode.
+    permission: vertexscala.admin.gamemode
+    aliases: gm
+    usage: /gamemode <gamemode> <player>
+  disableplugin:
+    description: A command that will disable the specified plugin.
+    permission: vertexscala.admin.disableplugin
+    usage: /disableplugin <pluginname>
+  enableplugin:
+    description: A command that will enable the specified plugin.
+    permission: vertexscala.admin.enableplugin
+    usage: /disableplugin <pluginname>
+  ban:
+    description: A command that will ban the specified player.
+    permission: vertexscala.admin.ban
+    usage: /ban <player> <reason>
+  unban:
+    description: A command that will unban the specified player.
+    permission: vertexscala.admin.unban
+    aliases: pardon
+    usage: /unban <player>
+  teleport:
+    description: A command that will teleport the sender to the specified player.
+    permission: vertexscala.admin.teleport
+    aliases: tp
+    usage: /teleport <player>
+  lightning:
+    description: A command that will send a lightning strike to the specified player.
+    permission: vertexscala.admin.lightning
+    usage: /lightning <player>
+  checkupdates:
+    description: A command that will search for updates to VertexScala.
+    permission: vertexscala.info.checkupdates
+    usage: /checkupdates
+  heal:
+    description: A command that will heal the specified player.
+    permission: vertexscala.admin.heal
+    usage: /heal <player>
+  feed:
+    description: A command that will give food bars to the specified player.
+    permission: vertexscala.admin.feed
+    aliases: eat
+    usage: /feed <player>
+  invsee:
+    description: A command that will allow the sender to see the specified player's inventory.
+    permission: vertexscala.admin.invsee
+    usage: /invsee <player>
+  time:
+    description: A command that will set the time in the world the sender is in.
+    permission: vertexscala.admin.time
+    usage: /time <time>
+  uuid:
+    description: A command that will give the specified player's UUID.
+    permission: vertexscala.info.uuid
+    usage: /uuid <player>
+  ban-ip:
+    description: A command that will ban the specified IP.
+    permission: vertexscala.admin.banip
+    usage: /ban-ip <ip>
+  unbanip:
+    description: A command that will unban the specified IP.
+    permission: vertexscala.admin.unbanip
+    usage: /unbanip <player>
+  explode:
+    description: A command that will explode the specified player.
+    permission: vertexscala.admin.explode
+    usage: /explode <player>
+  clear:
+    description: A command that will clear the inventory of the specified player.
+    permission: vertexscala.admin.clear
+    usage: /clear <player>
+  fly:
+    description: A command that will set the allow flight value of the sender.
+    permission: vertexscala.admin.fly
+    usage: /fly <flyboolean>
+  permcheck:
+    description: A command that will check to see if the specified player has the specified permission.
+    permission: vertexscala.admin.permcheck
+    usage: /permcheck <player> <permission>
+  op:
+    description: A command that will op the specified player.
+    permission: vertexscala.admin.op
+    usage: /op <player>
+  deop:
+    description: A command that will deop the specified player.
+    permision: vertexscala.admin.deop
+    usage: /deop <player>
+permissions:
+  vertexscala.*:
+    description: Gives access to all VertexScala commands.
+    children:
+      vertexscala.info.*: true
+      vertexscala.admin.*: true
+  vertexscala.info.*:
+    description: Gives access to info commands for VertexScala.
+    default: true
+    children:
+      vertexscala.info.scalaruntime: true
+      vertexscala.info.instance: true
+      vertexscala.info.commandengine: true
+      vertexscala.info.seen: true
+      vertexscala.info.checkupdates: true
+      vertexscala.info.uuid: true
+  vertexscala.info.scalaruntime:
+    description: Gives access to the SCALA command.
+    default: true
+  vertexscala.info.instance:
+    description: Gives access to the INSTANCE command.
+    default: true
+  vertexscala.admin.*:
+    description: Gives access to all of the admin commands for VertexScala.
+    default: op
+    children:
+      vertexscala.admin.freeze: true
+      vertexscala.admin.unfreeze: true
+      vertexscala.admin.broadcast: true
+      vertexscala.admin.gamemode: true
+      vertexscala.admin.disableplugin: true
+      vertexscala.admin.enableplugin: true
+      vertexscala.admin.ban: true
+      vertexscala.admin.unban: true
+      vertexscala.admin.teleport: true
+      vertexscala.admin.heal: true
+      vertexscala.admin.feed: true
+      vertexscala.admin.invsee: true
+      vertexscala.admin.time: true
+      vertexscala.admin.banip: true
+      vertexscala.admin.unbanip: true
+      vertexscala.admin.explode: true
+      vertexscala.admin.clear: true
+      vertexscala.admin.fly: true
+      vertexscala.admin.permcheck: true
+      vertexscala.admin.op: true
+      vertexscala.admin.deop: true
+  vertexscala.admin.freeze:
+    description: Gives access to the FREEZE command.
+    default: op
+  vertexscala.admin.unfreeze:
+    description: Gives access to the UNFREEZE command.
+    default: op
+  vertexscala.admin.broadcast:
+    description: Gives access to the BROADCAST command.
+    default: op
+  vertexscala.info.commandengine:
+    description: Gives access to the COMMANDENGINE command.
+    default: true
+  vertexscala.info.seen:
+    description: Gives access to the SEEN command.
+    default: op
+  vertexscala.admin.gamemode:
+    description: Gives access to the GAMEMODE and GM command.
+    default: op
+  vertexscala.admin.disableplugin:
+    description: Gives access to the DISABLEPLUGIN command.
+    default: op
+  vertexscala.admin.enableplugin:
+    description: Gives access to the ENABLEPLUGIN command.
+    default: op
+  vertexscala.admin.ban:
+    description: Gives access to the BAN command.
+    default: op
+  vertexscala.admin.unban:
+    description: Gives access to the UNBAN and PARDON command.
+    default: op
+  vertexscala.admin.teleport:
+    description: Gives access to the TELEPORT and TP command.
+    default: op
+  vertexscala.admin.lightning:
+    description: Gives access to the LIGHTNING command.
+    default: op
+  vertexscala.info.checkupdates:
+    description: Gives access to the CHECKUPDATES command.
+    default: op
+  vertexscala.admin.heal:
+    description: Gives access to the HEAL command
+    default: op
+  vertexscala.admin.feed:
+    description: Gives access to the FEED and EAT command.
+    default: op
+  vertexscala.admin.invsee:
+    description: Gives access to the INVSEE command.
+    default: op
+  vertexscala.admin.time:
+    description: Gives access to the TIME command.
+    default: op
+  vertexscala.info.uuid:
+    description: Gives access to the UUID command.
+    default: true
+  vertexscala.admin.banip:
+    description: Gives access to the BANIP command.
+    default: op
+  vertexscala.admin.unbanip:
+    description: Gives access to the UNBANIP command.
+    default: op
+  vertexscala.admin.explode:
+    description: Gives access to the EXPLODE command.
+    default: op
+  vertexscala.admin.clear:
+    description: Gives access to the CLEAR command.
+    default: op
+  vertexscala.admin.fly:
+    description: Gives access to the FLY command.
+    default: op
+  vertexscala.admin.permcheck:
+    description: Gives access to the PERMCHECK command.
+    default: op
+  vertexscala.admin.op:
+    description: Gives access to the OP command.
+    default: op
+  vertexscala.admin.deop:
+    description: Gives access to the DEOP command.
+    default: op
